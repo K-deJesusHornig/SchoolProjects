@@ -1,0 +1,140 @@
+-- Task 4 
+1.2//
+CREATE VIEW PlaylistView AS
+(SELECT position, song, artist, length 
+	FROM PlaylistSongs JOIN Songs Using (song = Songs.title) AND (artist = Songs.artistName)  -- Kanske splitta... 
+	WHERE playlist = 'M123' 
+	ORDER BY position ASC);  
+---------------------------------
+1.3//
+CREATE FUNCTION FuncName() -- Troligtvis utan aliasing
+  RETURNS TRIGGER AS $$
+  	-- Postition = sista: in med han! 
+  	IF (NEW.position = SELECT COUNT(*)+1 FROM PlaylistSongs WHERE id='M123') 
+  	THEN
+  		INSERT INTO PlaylistSongs VALUES 
+  		('M123', NEW.song, NEW.artist, NEW.position);
+  	-- Postition < än sista: respektera och korr ledet
+  	ELSIF(NEW.position < SELECT COUNT(*)+1 FROM PlaylistSongs WHERE id='M123')  
+  	THEN 
+  	UPDATE PlaylistSongs SET position = position+1 
+  	WHERE position > NEW.position-1;
+  	INSERT INTO PlaylistSongs VALUES 
+  		('M123', NEW.song, NEW.artist, NEW.position);
+  	-- Postition > än sista: Lägg sist
+  	ELSE
+  	INSERT INTO PlaylistSongs VALUES 
+  		('M123', NEW.song, NEW.artist, 1+(SELECT COUNT(*) FROM
+           PlaylistSongs WHERE playlist = 'M123'));
+  	END IF; 
+    Return New; 
+
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER Insertion
+INSTEAD OF INSERT ON PlaylistView -- OBS! view --> instead of
+FOR EACH ROW
+EXECUTE PROCEDURE FuncName(); 
+
+INSERT INTO PlaylistView VALUES (3,'SongName','GenericArtistName','420'); --Test
+
+-- Använd NEW till alla beräkningar istället för referensen till parametrar.
+-- Läs besrkvinignen bättre! 
+-- Kunde slagit ihop fallen av lika med och mindre än. 
+		-- Då korrigeringen bara gör något när det finns någon under. 
+
+---------------------------------
+
+2//
+	CREATE TABLE Customer(
+	id INTEGER PRIMARY KEY, 
+	name TEXT NOT NULL,
+	mBilling INTEGER NOT NULL, -- BORT
+D	CHECK (mBilling = (SELECT SUM(mFee) FROM Subscriptions WHERE customer = id)), -- VIEW IST
+	customerType BOOLEAN, -- argumentet specar t eller f. (unkown?)
+	FOREIGN KEY (mBilling)  -- BORT
+	);
+
+	CREATE TABLE Subscriptions(
+E	customer INTEGER REFERENCES Customer(id) ON DELETE CASCADE, 
+	phoneNr INTEGER PRIMARY KEY, 
+	plan TEXT NOT NULL, 
+	mFee INTEGER NOT NULL,
+	balance INTEGER NOT NULL, 
+	CHECK (balance >= 0),
+	CHECK (mFee >= 0),
+A	CHECK plan in (’prepaid’, ’flatrate’, ’corporate’)
+	);
+
+
+
+	CREATE FUNCTION InsertFuncSub AS $$
+		IF(EXISTS (SELECT * FROM Customer WHERE NEW.customer = id AND customerType = t) 
+			AND NEW.plan = 'corporate') THEN
+C		RAISE EXCEPTION 'Hold on, the private customer is not allowed to get a corporate plan';
+		END IF; 
+		IF (NEW.plan != 'prepaid') THEN 
+			INSERT INTO Subscriptions VALUES 
+			(NEW.customer, NEW.phoneNr, NEW.plan, NEW.mFee, NEW.balance);
+		ELSE 
+			INSERT INTO Subscriptions VALUES 
+B			(NEW.customer, NEW.phoneNr, NEW.plan, NEW.mFee, 0 );
+		END IF; 
+		RETURN NEW;
+	END;
+	$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER CorrInsertSub
+	INSERT ON Subscriptions
+	FOR EACH ROW
+	EXECUTE PROCEDURE InsertFunc();
+
+F_ Another trigger w/ function that deletes the cst if NOT EXISTS SELECT ? 
+
+Plan: 
+B -- krav mellan attribut?  --> funtkion, if-else
+C -- krav mellan attribut?  --> funtkion, if-else
+D -- dito
+E --> cascade delete on customer...  
+F --> if NOT EXISTS --> delete customer too? 
+
+Avdrag: 
+1. för många attribut i customer 
+2. missade unique(id, isPrivate) i customer, subscription
+3. B hade räckt med en check-constraint! Då det logiskt blir ett anitngen eller scenario.  
+4. C hade likaså räckt med en check-constraint
+
+FRÅGA: 
+1. När  vi kör en group by i vyn, vad bidrar sum() resp. group by med? 
+	Hade sum(fee) varit den samma för alla förekomster (är nog bara en 
+	förekomst dock) av "group by"-rader? 
+
+
+--------------------------------------
+
+3// 
+	1. Ser bra ut, orkar dock inte highlighta allt extra. 
+	
+	2. Finns ju triggern, men denna hanterar inte fallen då newscore är <= 4 
+	vilket den borde och isåfall delete from certifiedCrisp.  
+	
+	3. LÄS FACIT: det fanns en annan lösning som var mer rätt.
+
+	 WRONG: The table has no connection to the removed user and doesn't' sense when that one is gone.
+	 SOLUTION: Also add ON DELETE CASCADE for the REFERENCES MoviesScores in certifiedCrisp
+	   AND the next ON DELETE CASCADE for the REFERENCES user in Ratings
+	-- WHen a user is removed this should cascade over to other rows 
+		-- associated with this user
+	4. LÄS FACIT: det fanns en annan lösning som var mycket mer rätt.
+	Movies could get an id instead of repeating the year and title through all tables... 
+
+LÄRDOMAR: 
+Från 1. Läs hela koden! Även triggers och deras funktion. Lägg kommentarer ifall det behövs.
+F.2. Slarv är formodligen att inte alla fall hanteras korrekt eller komplett.
+F.3. Lägg till funktionalitet så att triggern även updaterar certifiedCrisp.  
+F.4.: för att identifiera redundans så titta efter tabeller som lagrar och vad dessa innehåller. 
+
+
+
+

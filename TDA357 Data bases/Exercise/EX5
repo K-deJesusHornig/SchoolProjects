@@ -1,0 +1,309 @@
+// EX5 TDA357
+
+//A BINARY TREES
+						//testförsök
+						{"type": "Binary tree node",
+						  "title": "Recursive defined binary tree", // krävs inte
+						 
+							"properties": {
+								"value" : "integer",
+								"left": {"oneOf":[{"type": "null"}, 
+												  {"$ref": "#"}]
+								}, 
+								"right": {"oneOf":[{"type": "null"}, 
+												  {"$ref": "#"}]
+								}
+							},
+							 "required": ["value", "left", "right"]
+						}
+
+
+// key value schema 
+
+{"type": "object", 
+  "oneOf": [{"$ref" : "#/definitions/leaf"},
+  			{"$ref" : "#/definitions/node"}],
+
+  "definitions": {
+	  "leaf": {
+	  	"type": "object",
+	  	"properties": {
+	  		"value": {"type": "integer"},
+	  		"right": false,
+	  		"left": false, // null?
+	  	},	
+	  	"required": ["value"]},
+
+  	
+	  "node": {
+	  	"type": "object",
+	  	"properties": {
+	  		"value": {"type": "integer"},
+	  		"right": {"$ref": "#"},
+	  		"left": {"$ref": "#"},
+	  	},	
+	  	"required": ["value", "left", "right"]},
+
+  }
+
+}
+
+// Array schema
+
+{ "properties" : {
+	"value" : {"type": "integer"},
+	"children": {"type": "array",
+				"items" : { "$ref": "#"},
+				"minItems": 2, // lås till alltid 2 barn
+				"maxItems": 2}},
+	"required" : ["value"]// ger utrymme till att ha "no subtrees" också. 
+
+}
+
+
+
+//----------------- B -------------------
+
+
+// Key/value based approach:
+{ "value":3,
+ 	"left": {
+		"value":1,
+	 	"left": {"value":0},
+	 	"right": {"value":2},
+	 "right": {
+ 		"value":5,
+ 		"left": {"value":4},
+ 		"right": {"value":6}
+ 	}
+},
+
+// Array-based approach:
+{ "value": 3,
+ "children": [ 
+	 	{"value":1,
+		 "children": [{"value":0}, {"value":2}]},
+		{"value":5,
+	 	"children": [{"value":4}, {"value":6}]}
+ 	]
+ }
+
+//----------------- C Postgres JSON Key -------------------
+1. 'strict $.**.value'
+2. 'strict $.**.left.value'
+3. 'lax $.*.*.value'  (enda gången det faktiskt finns null values att hämta)
+4. 'strict $.**?(@.value > 3).value' 
+5. 'strict $.** ?(@.value > $.value).value'  
+
+FRÅGA: 
+- Varför har facit inte med value på 4-5? 
+- KLAR: Samt hur exakt fungerar "$.*.*"? Svar: gå in i alla barn, alla barn på dessa barn igen.  
+- KLAR: Vad innebär lax? Svar: Returnerar null om intse önskat element stöts på. Strict ger error istället.
+
+// array version
+1. 'strict $.**.value'
+2. 'strict $.**.children[0].value'
+3. 'strict $.children[*].children[*].value'  		
+4. 'strict $.**?(@.value > 3).value' 
+5. 'strict $.**?(@.value > $.value).value'  
+
+
+------------------------------------------------------------------
+------------------------------------------------------------------
+
+
+//---------------- FLights------------------
+
+// JASON schema
+{"type" : "object",
+ "properties": {
+		"Airports":{ 
+			"type":"object", 
+			"additionalProperties": {"type":"string"}}, // vad exakt säger denna? ALLA PROPERTIES FÖRUTOM DE DEK. I "PROPERTIES" SKA FÖLJA DETTA MINI-SCHEMA
+		"FlightCodes":{
+			"type":"object", 
+			"additionalProperties": {"type":"string"}}, // Hur deklararerar vi keys? INTE ALLS
+		"Airports": {
+			"type":"object", 
+			"additionalProperties":{	
+				"type":"object",
+				"properties": {"dep":{"type":"string"}, 
+						       "dest":{"type":"string"}},
+				"required":["dep","dest"],
+				"additionalProperties": false
+			},
+		},
+"required": ["Airports", "FlightCodes", "Flights"] 	
+ }
+} 
+FRÅGOR: 
+- KLAR: Varför använder vi "additionalProperties" och vad innebär det med type string? Alla värden i objetet får vara endast vara strings? Svar: verkar just så  
+
+// JSON document (should validate the schema above and contain the data fron the table)
+
+{  	"Airports":{
+  		"GOT" : "Gothenburg",
+  		"ORY" : "Paris",
+  		"FRA" : "Frankfurt", 
+  		"MUC" : "Munich", 
+  	 },
+  	"FlightCodes":{
+  		"SK111": "SAS", 
+  		"AF222": "Air Franch",
+  		"AB222": "Air Berlin", 
+  		"KM111": "Air Malta" 
+  	 },
+ 	"Flights":{
+	 	"SK111": {"dep":"GOT", "dest": "FRA"},
+	 	"AF222": {"dep":"ORY", "dest": "MLA"}, 
+	 	"AB222": {"dep":"FRA", "dest": "MUC"}, 
+	  	"KM111": {"dep":"MUC", "dest": "MLA"}
+ 	},
+
+}
+  		
+NOTERA: Så detta document summerar alltså alla inserts praktiskt taget. 
+Inga deklarationer eller requrirements!
+
+
+
+// postgress SQL query that extracts the JSON data from tables 
+// utgå från hela JSON objektet som håller all data från tabellerna. (referera direkt till topp-nivå objekt i rot-objectet)
+
+WITH
+	 Ap AS (SELECT json_object_agg(code, city) // NOTERA hur vi själva namnger key:value paret här
+		 AS jsondata FROM Airports
+	 ),
+	 Fc AS (SELECT json_object_agg(code, airlineName)
+	 	AS jsondata FROM FlightCodes
+	 ),
+	 F AS (SELECT json_object_agg(
+		code, jsonb_build_object(
+		'departureAirport', departureAirport, // Notera syntax och namngivning, likt nedan
+		'destinationAirport', destinationAirport) 
+		AS jsondata FROM Flights
+	)
+)
+
+SELECT jsonb_pretty( 
+	 jsonb_build_object(
+		 'Airports', (SELECT jsondata FROM Ap), // Notera syntaxen, alltid i par med komma mellan
+		 'FlightCodes',(SELECT jsondata FROM Fc),
+		 'Flights',(SELECT jsondata FROM F)
+	 )
+ );
+
+FRÅGOR: 
+1. Vad är "jsonb_pretty"? 
+2. Hur vet jsonb_build_object(
+		'departureAirport', departureAirport, 
+		'destinationAirport', destinationAirport) delen varifrån den hämtar? första är namnegivning, andra är? Value? 
+
+
+
+
+
+------------------------------------------------------------------
+------------------------------------------------------------------
+
+
+//---------------- Applications------------------
+
+//A 
+{"Aplicants": {
+	"a1": "Andersson", 
+	"a2": "Jonsson", 
+	"a3": "Larsson"
+	},
+ "Choices":{
+ 	"a1": ["MPSOF":750, "MPALG":750, "MPALG":800],
+ 	"a2": ["MPALG":700],
+ 	//osv...
+ }
+}
+FEL: skulle skapa på ett gemensamt format coh inte "två tables" igen.
+
+
+//B
+{ 	"type": "object", // flytta denna
+	"additionalProperties": { // anävnds för att definiera alla innehåll
+		"type": "object",	
+	  		"properties": {"name":{ "type":"string"},
+	  					   "choices": {"type": "array",
+								"items" : {"type":"object",
+									"properties":{
+										"code": {"type": "string"},
+										"meritScore": {"type":"integer"},
+										// tycker man kunde krävt "min-lås" här
+									},
+									"additionalProperties": false, 
+									"required" : ["code", "meritScore"]// måste minst finnas
+								}
+			},
+	  		"required" : ["name", "choices"]
+		
+	} 
+}
+
+
+//C Write a postgress JSONPath query
+
+'Strict $.*.choices[0]?(@.meritScore >800).choices[0]'
+
+//FACIT: 'Strict $.**?(@.choices[0].meritScore >800).choices[0]'
+
+/*
+WITH
+	Ap AS (SELECT json_object_agg(code, city) // NOTERA hur vi själva namnger key:value paret här
+		 AS jsondata FROM Airports
+	 ),
+	 Fc AS (SELECT json_object_agg(code, airlineName)
+	 	AS jsondata FROM FlightCodes
+	 ),
+	 F AS (SELECT json_object_agg(
+		code, jsonb_build_object(
+		'departureAirport', departureAirport, // Notera syntax och namngivning, likt nedan
+		'destinationAirport', destinationAirport) 
+		AS jsondata FROM Flights
+	)
+)
+
+SELECT jsonb_pretty( 
+	 jsonb_build_object(
+		 'Airports', (SELECT jsondata FROM Ap), // Notera syntaxen, alltid i par med komma mellan
+		 'FlightCodes',(SELECT jsondata FROM Fc),
+		 'Flights',(SELECT jsondata FROM F)
+	 )
+ );
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
