@@ -1,0 +1,398 @@
+@prefix : <http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/> .
+
+<http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1> rdf:type owl:Ontology ;
+                                                                                    rdfs:comment "This is an ontology for the assignment 2 - a world with a university setting"@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/Contains
+:Contains rdf:type owl:ObjectProperty ;
+          rdfs:domain :CourseRegistration ;
+          rdfs:range :Courseinstance .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/DirectorOf
+:DirectorOf rdf:type owl:ObjectProperty ;
+            rdfs:domain [ rdf:type owl:Restriction ;
+                          owl:onProperty :DirectorOf ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Senior_teacher
+                        ] ;
+            rdfs:range [ rdf:type owl:Restriction ;
+                         owl:onProperty :DirectorOf ;
+                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Programme
+                       ] .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/DivisionOf
+:DivisionOf rdf:type owl:ObjectProperty ;
+            rdfs:domain [ rdf:type owl:Restriction ;
+                          owl:onProperty :DivisionOf ;
+                          owl:someValuesFrom :Division
+                        ] ;
+            rdfs:range [ rdf:type owl:Restriction ;
+                         owl:onProperty :DivisionOf ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Department
+                       ] .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/EmployedBy
+:EmployedBy rdf:type owl:ObjectProperty ;
+            rdfs:domain [ rdf:type owl:Restriction ;
+                          owl:onProperty :EmployedBy ;
+                          owl:someValuesFrom :Employee
+                        ] ;
+            rdfs:range [ rdf:type owl:Restriction ;
+                         owl:onProperty :EmployedBy ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Division
+                       ] .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/ExaminedBy
+:ExaminedBy rdf:type owl:ObjectProperty ;
+            rdfs:domain [ rdf:type owl:Restriction ;
+                          owl:onProperty :ExaminedBy ;
+                          owl:someValuesFrom :Courseinstance
+                        ] ;
+            rdfs:range [ rdf:type owl:Restriction ;
+                         owl:onProperty :ExaminedBy ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Senior_teacher
+                       ] .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/GivenBy
+:GivenBy rdf:type owl:ObjectProperty ;
+         rdfs:domain :Course ;
+         rdfs:range :Department .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/HasA
+:HasA rdf:type owl:ObjectProperty ;
+      rdfs:domain :ProgrammeCourse ;
+      rdfs:range :Programme .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/HoldsA
+:HoldsA rdf:type owl:ObjectProperty ;
+        rdfs:domain :ProgrammeCourse ;
+        rdfs:range :Course .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/ListedOn
+:ListedOn rdf:type owl:ObjectProperty ;
+          rdfs:domain :Student ;
+          rdfs:range :CourseRegistration .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/Of
+:Of rdf:type owl:ObjectProperty ;
+    rdfs:domain :Courseinstance ;
+    rdfs:range :Course .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/OwnedBy
+:OwnedBy rdf:type owl:ObjectProperty ;
+         rdfs:domain [ rdf:type owl:Restriction ;
+                       owl:onProperty :OwnedBy ;
+                       owl:someValuesFrom :Programme
+                     ] ;
+         rdfs:range [ rdf:type owl:Restriction ;
+                      owl:onProperty :OwnedBy ;
+                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                      owl:onClass :Department
+                    ] .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/StudentEnrolledTo
+:StudentEnrolledTo rdf:type owl:ObjectProperty ;
+                   rdfs:domain [ rdf:type owl:Restriction ;
+                                 owl:onProperty :StudentEnrolledTo ;
+                                 owl:someValuesFrom :Student
+                               ] ;
+                   rdfs:range [ rdf:type owl:Restriction ;
+                                owl:onProperty :StudentEnrolledTo ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Programme
+                              ] .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/T_AssignedTo
+:T_AssignedTo rdf:type owl:ObjectProperty ;
+              rdfs:domain :T_Assignment ;
+              rdfs:range :Courseinstance .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/T_CourseAssignment
+:T_CourseAssignment rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Courseinstance ;
+                    rdfs:range :T_Assignment .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/TA_AssignedTo
+:TA_AssignedTo rdf:type owl:ObjectProperty ;
+               rdfs:domain :TA_Assignment ;
+               rdfs:range :Courseinstance .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/TA_CourseAssignment
+:TA_CourseAssignment rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Courseinstance ;
+                     rdfs:range :TA_Assignment .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/assistantHours
+:assistantHours rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Courseinstance ;
+                rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/courseCode
+:courseCode rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :Course ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/courseName
+:courseName rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :Course ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/courseType
+:courseType rdf:type owl:DatatypeProperty ;
+            rdfs:domain :ProgrammeCourse ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/courseinstanceAcademicYear
+:courseinstanceAcademicYear rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :Courseinstance ;
+                            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/credits
+:credits rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Course ;
+         rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/departmentName
+:departmentName rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :Department ;
+                rdfs:range xsd:Name .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/divisionName
+:divisionName rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :Division ;
+              rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/employeeId
+:employeeId rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Employee ;
+            rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/employeeName
+:employeeName rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Employee ;
+              rdfs:range xsd:Name .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/grade
+:grade rdf:type owl:DatatypeProperty ;
+       rdfs:domain :CourseRegistration ;
+       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/graduated
+:graduated rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Student ;
+           rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/level
+:level rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Course ;
+       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/numberOfStudnets
+:numberOfStudnets rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Courseinstance ;
+                  rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/programmeAcademicYear
+:programmeAcademicYear rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Programme ;
+                     rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/programmeCode
+:programmeCode rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Programme ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/programmeName
+:programmeName rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Programme ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/status
+:status rdf:type owl:DatatypeProperty ;
+        rdfs:domain :CourseRegistration ;
+        rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/studentId
+:studentId rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :Student ;
+           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/studentName
+:studentName rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Student ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/studyPeriod
+:studyPeriod rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Courseinstance ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/studyYear
+:studyYear rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Course ;
+           rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/teacherAssignedHours
+:teacherAssignedHours rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Teacher ;
+                      rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/teacherHours
+:teacherHours rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Courseinstance ;
+              rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/teacherReportedHours
+:teacherReportedHours rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Teacher ;
+                      rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/teacherassistentAssignedHours
+:teacherassistentAssignedHours rdf:type owl:DatatypeProperty ;
+                               rdfs:domain :Teacherassistant ;
+                               rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/teacherassistentReportedHours
+:teacherassistentReportedHours rdf:type owl:DatatypeProperty ;
+                               rdfs:domain :Teacherassistant ;
+                               rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/year
+:year rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Student ;
+      rdfs:range xsd:int .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/Course
+:Course rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/CourseRegistration
+:CourseRegistration rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/Courseinstance
+:Courseinstance rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/Department
+:Department rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/Division
+:Division rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/Employee
+:Employee rdf:type owl:Class ;
+          owl:hasKey ( :employeeId
+                     ) .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/Programme
+:Programme rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/ProgrammeCourse
+:ProgrammeCourse rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/Senior_teacher
+:Senior_teacher rdf:type owl:Class ;
+                rdfs:subClassOf :Teacher .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/Student
+:Student rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/T_Assignment
+:T_Assignment rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/TA_Assignment
+:TA_Assignment rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/Teacher
+:Teacher rdf:type owl:Class ;
+         rdfs:subClassOf :Employee .
+
+
+###  http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/Teacherassistant
+:Teacherassistant rdf:type owl:Class ;
+                  rdfs:subClassOf :Employee .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi

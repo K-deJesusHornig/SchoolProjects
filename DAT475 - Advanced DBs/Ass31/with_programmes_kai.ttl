@@ -1,0 +1,2159 @@
+@prefix : <http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.semanticweb.org/kailashdejesushornig/ontologies/2023/3/assignment2_v1> a owl:Ontology ;
+    rdfs:comment "This is an ontology for the assignment 2 - a world with a university setting"@en .
+
+:Contains a owl:ObjectProperty ;
+    rdfs:domain :CourseRegistration ;
+    rdfs:range :Courseinstance .
+
+:Course1001 a :Course ;
+    :course_name "C-1" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-32" .
+
+:Course1002 a :Course ;
+    :course_name "C-2" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-51" .
+
+:Course1003 a :Course ;
+    :course_name "C-3" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-41" .
+
+:Course1004 a :Course ;
+    :course_name "C-4" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-61" .
+
+:Course1005 a :Course ;
+    :course_name "C-5" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-52" .
+
+:Course1006 a :Course ;
+    :course_name "C-6" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-73" .
+
+:Course1007 a :Course ;
+    :course_name "C-7" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-61" .
+
+:Course1008 a :Course ;
+    :course_name "C-8" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-41" .
+
+:Course1009 a :Course ;
+    :course_name "C-9" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-61" .
+
+:Course1010 a :Course ;
+    :course_name "C-10" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-42" .
+
+:Course1011 a :Course ;
+    :course_name "C-11" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-13" .
+
+:Course1012 a :Course ;
+    :course_name "C-12" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-41" .
+
+:Course1013 a :Course ;
+    :course_name "C-13" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-21" .
+
+:Course1014 a :Course ;
+    :course_name "C-14" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-71" .
+
+:Course1015 a :Course ;
+    :course_name "C-15" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-41" .
+
+:Course1016 a :Course ;
+    :course_name "C-16" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-11" .
+
+:Course1017 a :Course ;
+    :course_name "C-17" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-61" .
+
+:Course1018 a :Course ;
+    :course_name "C-18" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-13" .
+
+:Course1019 a :Course ;
+    :course_name "C-19" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-72" .
+
+:Course1020 a :Course ;
+    :course_name "C-20" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-61" .
+
+:Course1021 a :Course ;
+    :course_name "C-21" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-72" .
+
+:Course1022 a :Course ;
+    :course_name "C-22" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-42" .
+
+:Course1023 a :Course ;
+    :course_name "C-23" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-71" .
+
+:Course1024 a :Course ;
+    :course_name "C-24" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-13" .
+
+:Course1025 a :Course ;
+    :course_name "C-25" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-01" .
+
+:Course1026 a :Course ;
+    :course_name "C-26" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-61" .
+
+:Course1027 a :Course ;
+    :course_name "C-27" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-01" .
+
+:Course1028 a :Course ;
+    :course_name "C-28" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-61" .
+
+:Course1029 a :Course ;
+    :course_name "C-29" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-72" .
+
+:Course1030 a :Course ;
+    :course_name "C-30" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-42" .
+
+:Course1031 a :Course ;
+    :course_name "C-31" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-42" .
+
+:Course1032 a :Course ;
+    :course_name "C-32" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-52" .
+
+:Course1033 a :Course ;
+    :course_name "C-33" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-42" .
+
+:Course1034 a :Course ;
+    :course_name "C-34" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-14" .
+
+:Course1035 a :Course ;
+    :course_name "C-35" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-33" .
+
+:Course1036 a :Course ;
+    :course_name "C-36" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-73" .
+
+:Course1037 a :Course ;
+    :course_name "C-37" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-21" .
+
+:Course1038 a :Course ;
+    :course_name "C-38" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-21" .
+
+:Course1039 a :Course ;
+    :course_name "C-39" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-74" .
+
+:Course1040 a :Course ;
+    :course_name "C-40" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-61" .
+
+:Course1041 a :Course ;
+    :course_name "C-41" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-61" .
+
+:Course1042 a :Course ;
+    :course_name "C-42" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-42" .
+
+:Course1043 a :Course ;
+    :course_name "C-43" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-72" .
+
+:Course1044 a :Course ;
+    :course_name "C-44" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-61" .
+
+:Course1045 a :Course ;
+    :course_name "C-45" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-13" .
+
+:Course1046 a :Course ;
+    :course_name "C-46" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-41" .
+
+:Course1047 a :Course ;
+    :course_name "C-47" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-12" .
+
+:Course1048 a :Course ;
+    :course_name "C-48" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-54" .
+
+:Course1049 a :Course ;
+    :course_name "C-49" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-41" .
+
+:Course1050 a :Course ;
+    :course_name "C-50" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-01" .
+
+:Course1051 a :Course ;
+    :course_name "C-51" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-14" .
+
+:Course1052 a :Course ;
+    :course_name "C-52" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-01" .
+
+:Course1053 a :Course ;
+    :course_name "C-53" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-33" .
+
+:Course1054 a :Course ;
+    :course_name "C-54" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-61" .
+
+:Course1055 a :Course ;
+    :course_name "C-55" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-01" .
+
+:Course1056 a :Course ;
+    :course_name "C-56" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-01" .
+
+:Course1057 a :Course ;
+    :course_name "C-57" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-61" .
+
+:Course1058 a :Course ;
+    :course_name "C-58" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-61" .
+
+:Course1059 a :Course ;
+    :course_name "C-59" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-21" .
+
+:Course1060 a :Course ;
+    :course_name "C-60" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-41" .
+
+:Course1061 a :Course ;
+    :course_name "C-61" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-21" .
+
+:Course1062 a :Course ;
+    :course_name "C-62" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-01" .
+
+:Course1063 a :Course ;
+    :course_name "C-63" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-33" .
+
+:Course1064 a :Course ;
+    :course_name "C-64" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-41" .
+
+:Course1065 a :Course ;
+    :course_name "C-65" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-53" .
+
+:Course1066 a :Course ;
+    :course_name "C-66" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-01" .
+
+:Course1067 a :Course ;
+    :course_name "C-67" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-11" .
+
+:Course1068 a :Course ;
+    :course_name "C-68" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-74" .
+
+:Course1069 a :Course ;
+    :course_name "C-69" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-73" .
+
+:Course1070 a :Course ;
+    :course_name "C-70" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-71" .
+
+:Course1071 a :Course ;
+    :course_name "C-71" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-73" .
+
+:Course1072 a :Course ;
+    :course_name "C-72" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-71" .
+
+:Course1073 a :Course ;
+    :course_name "C-73" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-14" .
+
+:Course1074 a :Course ;
+    :course_name "C-74" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-14" .
+
+:Course1075 a :Course ;
+    :course_name "C-75" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-21" .
+
+:Course1076 a :Course ;
+    :course_name "C-76" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-61" .
+
+:Course1077 a :Course ;
+    :course_name "C-77" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-53" .
+
+:Course1078 a :Course ;
+    :course_name "C-78" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-31" .
+
+:Course1079 a :Course ;
+    :course_name "C-79" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-12" .
+
+:Course1080 a :Course ;
+    :course_name "C-80" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-42" .
+
+:Course1081 a :Course ;
+    :course_name "C-81" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-52" .
+
+:Course1082 a :Course ;
+    :course_name "C-82" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-32" .
+
+:Course1083 a :Course ;
+    :course_name "C-83" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-21" .
+
+:Course1084 a :Course ;
+    :course_name "C-84" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-61" .
+
+:Course1085 a :Course ;
+    :course_name "C-85" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-33" .
+
+:Course1086 a :Course ;
+    :course_name "C-86" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-51" .
+
+:Course1087 a :Course ;
+    :course_name "C-87" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-32" .
+
+:Course1088 a :Course ;
+    :course_name "C-88" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-01" .
+
+:Course1089 a :Course ;
+    :course_name "C-89" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-01" .
+
+:Course1090 a :Course ;
+    :course_name "C-90" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-54" .
+
+:Course1091 a :Course ;
+    :course_name "C-91" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-21" .
+
+:Course1092 a :Course ;
+    :course_name "C-92" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-61" .
+
+:Course1093 a :Course ;
+    :course_name "C-93" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-61" .
+
+:Course1094 a :Course ;
+    :course_name "C-94" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-41" .
+
+:Course1095 a :Course ;
+    :course_name "C-95" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-11" .
+
+:Course1096 a :Course ;
+    :course_name "C-96" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-34" .
+
+:Course1097 a :Course ;
+    :course_name "C-97" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-32" .
+
+:Course1098 a :Course ;
+    :course_name "C-98" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-01" .
+
+:Course1099 a :Course ;
+    :course_name "C-99" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-32" .
+
+:Course1100 a :Course ;
+    :course_name "C-100" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-21" .
+
+:Course1101 a :Course ;
+    :course_name "C-101" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-42" .
+
+:Course1102 a :Course ;
+    :course_name "C-102" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-41" .
+
+:Course1103 a :Course ;
+    :course_name "C-103" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-41" .
+
+:Course1104 a :Course ;
+    :course_name "C-104" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-21" .
+
+:Course1105 a :Course ;
+    :course_name "C-105" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-32" .
+
+:Course1106 a :Course ;
+    :course_name "C-106" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-61" .
+
+:Course1107 a :Course ;
+    :course_name "C-107" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-33" .
+
+:Course1108 a :Course ;
+    :course_name "C-108" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-12" .
+
+:Course1109 a :Course ;
+    :course_name "C-109" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-01" .
+
+:Course1110 a :Course ;
+    :course_name "C-110" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-34" .
+
+:Course1111 a :Course ;
+    :course_name "C-111" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-54" .
+
+:Course1112 a :Course ;
+    :course_name "C-112" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-71" .
+
+:Course1113 a :Course ;
+    :course_name "C-113" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-01" .
+
+:Course1114 a :Course ;
+    :course_name "C-114" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-51" .
+
+:Course1115 a :Course ;
+    :course_name "C-115" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-21" .
+
+:Course1116 a :Course ;
+    :course_name "C-116" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-52" .
+
+:Course1117 a :Course ;
+    :course_name "C-117" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-72" .
+
+:Course1118 a :Course ;
+    :course_name "C-118" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-42" .
+
+:Course1119 a :Course ;
+    :course_name "C-119" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-21" .
+
+:Course1120 a :Course ;
+    :course_name "C-120" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-21" .
+
+:Course1121 a :Course ;
+    :course_name "C-121" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-32" .
+
+:Course1122 a :Course ;
+    :course_name "C-122" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-21" .
+
+:Course1123 a :Course ;
+    :course_name "C-123" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-11" .
+
+:Course1124 a :Course ;
+    :course_name "C-124" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-73" .
+
+:Course1125 a :Course ;
+    :course_name "C-125" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-42" .
+
+:Course1126 a :Course ;
+    :course_name "C-126" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-32" .
+
+:Course1127 a :Course ;
+    :course_name "C-127" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-41" .
+
+:Course1128 a :Course ;
+    :course_name "C-128" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-31" .
+
+:Course1129 a :Course ;
+    :course_name "C-129" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-41" .
+
+:Course1130 a :Course ;
+    :course_name "C-130" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-74" .
+
+:Course1131 a :Course ;
+    :course_name "C-131" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-74" .
+
+:Course1132 a :Course ;
+    :course_name "C-132" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-01" .
+
+:Course1133 a :Course ;
+    :course_name "C-133" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-71" .
+
+:Course1134 a :Course ;
+    :course_name "C-134" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-51" .
+
+:Course1135 a :Course ;
+    :course_name "C-135" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-51" .
+
+:Course1136 a :Course ;
+    :course_name "C-136" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-14" .
+
+:Course1137 a :Course ;
+    :course_name "C-137" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-01" .
+
+:Course1138 a :Course ;
+    :course_name "C-138" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-51" .
+
+:Course1139 a :Course ;
+    :course_name "C-139" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-61" .
+
+:Course1140 a :Course ;
+    :course_name "C-140" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-54" .
+
+:Course1141 a :Course ;
+    :course_name "C-141" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-51" .
+
+:Course1142 a :Course ;
+    :course_name "C-142" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-61" .
+
+:Course1143 a :Course ;
+    :course_name "C-143" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-61" .
+
+:Course1144 a :Course ;
+    :course_name "C-144" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-71" .
+
+:Course1145 a :Course ;
+    :course_name "C-145" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-61" .
+
+:Course1146 a :Course ;
+    :course_name "C-146" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-21" .
+
+:Course1147 a :Course ;
+    :course_name "C-147" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-61" .
+
+:Course1148 a :Course ;
+    :course_name "C-148" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-14" .
+
+:Course1149 a :Course ;
+    :course_name "C-149" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-01" .
+
+:Course1150 a :Course ;
+    :course_name "C-150" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-42" .
+
+:Course1151 a :Course ;
+    :course_name "C-151" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-41" .
+
+:Course1152 a :Course ;
+    :course_name "C-152" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-32" .
+
+:Course1153 a :Course ;
+    :course_name "C-153" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-21" .
+
+:Course1154 a :Course ;
+    :course_name "C-154" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-21" .
+
+:Course1155 a :Course ;
+    :course_name "C-155" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-13" .
+
+:Course1156 a :Course ;
+    :course_name "C-156" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-61" .
+
+:Course1157 a :Course ;
+    :course_name "C-157" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-21" .
+
+:Course1158 a :Course ;
+    :course_name "C-158" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-12" .
+
+:Course1159 a :Course ;
+    :course_name "C-159" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-34" .
+
+:Course1160 a :Course ;
+    :course_name "C-160" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-33" .
+
+:Course1161 a :Course ;
+    :course_name "C-161" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-71" .
+
+:Course1162 a :Course ;
+    :course_name "C-162" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-41" .
+
+:Course1163 a :Course ;
+    :course_name "C-163" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-51" .
+
+:Course1164 a :Course ;
+    :course_name "C-164" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-61" .
+
+:Course1165 a :Course ;
+    :course_name "C-165" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-11" .
+
+:Course1166 a :Course ;
+    :course_name "C-166" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-42" .
+
+:Course1167 a :Course ;
+    :course_name "C-167" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-11" .
+
+:Course1168 a :Course ;
+    :course_name "C-168" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-74" .
+
+:Course1169 a :Course ;
+    :course_name "C-169" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-74" .
+
+:Course1170 a :Course ;
+    :course_name "C-170" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-71" .
+
+:Course1171 a :Course ;
+    :course_name "C-171" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-01" .
+
+:Course1172 a :Course ;
+    :course_name "C-172" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-21" .
+
+:Course1173 a :Course ;
+    :course_name "C-173" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-72" .
+
+:Course1174 a :Course ;
+    :course_name "C-174" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-34" .
+
+:Course1175 a :Course ;
+    :course_name "C-175" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-41" .
+
+:Course1176 a :Course ;
+    :course_name "C-176" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-52" .
+
+:Course1177 a :Course ;
+    :course_name "C-177" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-21" .
+
+:Course1178 a :Course ;
+    :course_name "C-178" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-13" .
+
+:Course1179 a :Course ;
+    :course_name "C-179" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-12" .
+
+:Course1180 a :Course ;
+    :course_name "C-180" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-11" .
+
+:Course1181 a :Course ;
+    :course_name "C-181" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-61" .
+
+:Course1182 a :Course ;
+    :course_name "C-182" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-01" .
+
+:Course1183 a :Course ;
+    :course_name "C-183" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-72" .
+
+:Course1184 a :Course ;
+    :course_name "C-184" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-42" .
+
+:Course1185 a :Course ;
+    :course_name "C-185" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-71" .
+
+:Course1186 a :Course ;
+    :course_name "C-186" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-32" .
+
+:Course1187 a :Course ;
+    :course_name "C-187" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-11" .
+
+:Course1188 a :Course ;
+    :course_name "C-188" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-61" .
+
+:Course1189 a :Course ;
+    :course_name "C-189" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-51" .
+
+:Course1190 a :Course ;
+    :course_name "C-190" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-74" .
+
+:Course1191 a :Course ;
+    :course_name "C-191" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-42" .
+
+:Course1192 a :Course ;
+    :course_name "C-192" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-21" .
+
+:Course1193 a :Course ;
+    :course_name "C-193" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-34" .
+
+:Course1194 a :Course ;
+    :course_name "C-194" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-41" .
+
+:Course1195 a :Course ;
+    :course_name "C-195" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-21" .
+
+:Course1196 a :Course ;
+    :course_name "C-196" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-41" .
+
+:Course1197 a :Course ;
+    :course_name "C-197" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-52" .
+
+:Course1198 a :Course ;
+    :course_name "C-198" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-21" .
+
+:Course1199 a :Course ;
+    :course_name "C-199" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-61" .
+
+:Course1200 a :Course ;
+    :course_name "C-200" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-12" .
+
+:Course1201 a :Course ;
+    :course_name "C-201" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-52" .
+
+:Course1202 a :Course ;
+    :course_name "C-202" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-61" .
+
+:Course1203 a :Course ;
+    :course_name "C-203" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-32" .
+
+:Course1204 a :Course ;
+    :course_name "C-204" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-01" .
+
+:Course1205 a :Course ;
+    :course_name "C-205" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-42" .
+
+:Course1206 a :Course ;
+    :course_name "C-206" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-51" .
+
+:Course1207 a :Course ;
+    :course_name "C-207" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-21" .
+
+:Course1208 a :Course ;
+    :course_name "C-208" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-52" .
+
+:Course1209 a :Course ;
+    :course_name "C-209" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-54" .
+
+:Course1210 a :Course ;
+    :course_name "C-210" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-21" .
+
+:Course1211 a :Course ;
+    :course_name "C-211" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-61" .
+
+:Course1212 a :Course ;
+    :course_name "C-212" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-33" .
+
+:Course1213 a :Course ;
+    :course_name "C-213" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-42" .
+
+:Course1214 a :Course ;
+    :course_name "C-214" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-41" .
+
+:Course1215 a :Course ;
+    :course_name "C-215" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-12" .
+
+:Course1216 a :Course ;
+    :course_name "C-216" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-12" .
+
+:Course1217 a :Course ;
+    :course_name "C-217" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-21" .
+
+:Course1218 a :Course ;
+    :course_name "C-218" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-71" .
+
+:Course1219 a :Course ;
+    :course_name "C-219" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-33" .
+
+:Course1220 a :Course ;
+    :course_name "C-220" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-33" .
+
+:Course1221 a :Course ;
+    :course_name "C-221" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-61" .
+
+:Course1222 a :Course ;
+    :course_name "C-222" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-61" .
+
+:Course1223 a :Course ;
+    :course_name "C-223" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-01" .
+
+:Course1224 a :Course ;
+    :course_name "C-224" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-41" .
+
+:Course1225 a :Course ;
+    :course_name "C-225" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-52" .
+
+:Course1226 a :Course ;
+    :course_name "C-226" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-72" .
+
+:Course1227 a :Course ;
+    :course_name "C-227" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-01" .
+
+:Course1228 a :Course ;
+    :course_name "C-228" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-52" .
+
+:Course1229 a :Course ;
+    :course_name "C-229" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-61" .
+
+:Course1230 a :Course ;
+    :course_name "C-230" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-42" .
+
+:Course1231 a :Course ;
+    :course_name "C-231" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-34" .
+
+:Course1232 a :Course ;
+    :course_name "C-232" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-52" .
+
+:Course1233 a :Course ;
+    :course_name "C-233" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-61" .
+
+:Course1234 a :Course ;
+    :course_name "C-234" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-32" .
+
+:Course1235 a :Course ;
+    :course_name "C-235" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-51" .
+
+:Course1236 a :Course ;
+    :course_name "C-236" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-12" .
+
+:Course1237 a :Course ;
+    :course_name "C-237" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-01" .
+
+:Course1238 a :Course ;
+    :course_name "C-238" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-12" .
+
+:Course1239 a :Course ;
+    :course_name "C-239" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-74" .
+
+:Course1240 a :Course ;
+    :course_name "C-240" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-41" .
+
+:Course1241 a :Course ;
+    :course_name "C-241" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-42" .
+
+:Course1242 a :Course ;
+    :course_name "C-242" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-11" .
+
+:Course1243 a :Course ;
+    :course_name "C-243" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-21" .
+
+:Course1244 a :Course ;
+    :course_name "C-244" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-61" .
+
+:Course1245 a :Course ;
+    :course_name "C-245" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-61" .
+
+:Course1246 a :Course ;
+    :course_name "C-246" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-52" .
+
+:Course1247 a :Course ;
+    :course_name "C-247" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-61" .
+
+:Course1248 a :Course ;
+    :course_name "C-248" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-21" .
+
+:Course1249 a :Course ;
+    :course_name "C-249" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-42" .
+
+:Course1250 a :Course ;
+    :course_name "C-250" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-72" .
+
+:Course1251 a :Course ;
+    :course_name "C-251" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-01" .
+
+:Course1252 a :Course ;
+    :course_name "C-252" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-32" .
+
+:Course1253 a :Course ;
+    :course_name "C-253" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-74" .
+
+:Course1254 a :Course ;
+    :course_name "C-254" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-42" .
+
+:Course1255 a :Course ;
+    :course_name "C-255" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-71" .
+
+:Course1256 a :Course ;
+    :course_name "C-256" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-53" .
+
+:Course1257 a :Course ;
+    :course_name "C-257" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-01" .
+
+:Course1258 a :Course ;
+    :course_name "C-258" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-33" .
+
+:Course1259 a :Course ;
+    :course_name "C-259" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-21" .
+
+:Course1260 a :Course ;
+    :course_name "C-260" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-61" .
+
+:Course1261 a :Course ;
+    :course_name "C-261" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-71" .
+
+:Course1262 a :Course ;
+    :course_name "C-262" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-33" .
+
+:Course1263 a :Course ;
+    :course_name "C-263" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-61" .
+
+:Course1264 a :Course ;
+    :course_name "C-264" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-14" .
+
+:Course1265 a :Course ;
+    :course_name "C-265" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-61" .
+
+:Course1266 a :Course ;
+    :course_name "C-266" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-33" .
+
+:Course1267 a :Course ;
+    :course_name "C-267" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-32" .
+
+:Course1268 a :Course ;
+    :course_name "C-268" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-21" .
+
+:Course1269 a :Course ;
+    :course_name "C-269" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-61" .
+
+:Course1270 a :Course ;
+    :course_name "C-270" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-11" .
+
+:Course1271 a :Course ;
+    :course_name "C-271" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-14" .
+
+:Course1272 a :Course ;
+    :course_name "C-272" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-71" .
+
+:Course1273 a :Course ;
+    :course_name "C-273" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-61" .
+
+:Course1274 a :Course ;
+    :course_name "C-274" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-01" .
+
+:Course1275 a :Course ;
+    :course_name "C-275" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-12" .
+
+:Course1276 a :Course ;
+    :course_name "C-276" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-01" .
+
+:Course1277 a :Course ;
+    :course_name "C-277" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-13" .
+
+:Course1278 a :Course ;
+    :course_name "C-278" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-54" .
+
+:Course1279 a :Course ;
+    :course_name "C-279" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-01" .
+
+:Course1280 a :Course ;
+    :course_name "C-280" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-52" .
+
+:Course1281 a :Course ;
+    :course_name "C-281" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-01" .
+
+:Course1282 a :Course ;
+    :course_name "C-282" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-54" .
+
+:Course1283 a :Course ;
+    :course_name "C-283" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-61" .
+
+:Course1284 a :Course ;
+    :course_name "C-284" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-54" .
+
+:Course1285 a :Course ;
+    :course_name "C-285" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-73" .
+
+:Course1286 a :Course ;
+    :course_name "C-286" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-54" .
+
+:Course1287 a :Course ;
+    :course_name "C-287" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-21" .
+
+:Course1288 a :Course ;
+    :course_name "C-288" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-54" .
+
+:Course1289 a :Course ;
+    :course_name "C-289" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-01" .
+
+:Course1290 a :Course ;
+    :course_name "C-290" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-54" .
+
+:Course1291 a :Course ;
+    :course_name "C-291" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-01" .
+
+:Course1292 a :Course ;
+    :course_name "C-292" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-01" .
+
+:Course1293 a :Course ;
+    :course_name "C-293" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-21" .
+
+:Course1294 a :Course ;
+    :course_name "C-294" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-61" .
+
+:Course1295 a :Course ;
+    :course_name "C-295" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-21" .
+
+:Course1296 a :Course ;
+    :course_name "C-296" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-13" .
+
+:Course1297 a :Course ;
+    :course_name "C-297" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-12" .
+
+:Course1298 a :Course ;
+    :course_name "C-298" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-61" .
+
+:Course1299 a :Course ;
+    :course_name "C-299" ;
+    :credits "7.5" ;
+    :level "Second Cycle" ;
+    :owned_by "P-01" .
+
+:Course1300 a :Course ;
+    :course_name "C-300" ;
+    :credits "7.5" ;
+    :level "First Cycle" ;
+    :owned_by "P-72" .
+
+:GivenBy a owl:ObjectProperty ;
+    rdfs:domain :Course ;
+    rdfs:range :Department .
+
+:HasA a owl:ObjectProperty ;
+    rdfs:domain :ProgramCourse ;
+    rdfs:range :Program .
+
+:HoldsA a owl:ObjectProperty ;
+    rdfs:domain :ProgramCourse ;
+    rdfs:range :Course .
+
+:ListedOn a owl:ObjectProperty ;
+    rdfs:domain :Student ;
+    rdfs:range :CourseRegistration .
+
+:Of a owl:ObjectProperty ;
+    rdfs:domain :Courseinstance ;
+    rdfs:range :Course .
+
+:Programmme10001 a :Programme ;
+    :director "19620522-0023" ;
+    :programme_code "10001" ;
+    :programme_name "P-01" .
+
+:Programmme10011 a :Programme ;
+    :director "19620424-0026" ;
+    :programme_code "10011" ;
+    :programme_name "P-11" .
+
+:Programmme10012 a :Programme ;
+    :director "19610623-0005" ;
+    :programme_code "10012" ;
+    :programme_name "P-12" .
+
+:Programmme10013 a :Programme ;
+    :director "19690408-0009" ;
+    :programme_code "10013" ;
+    :programme_name "P-13" .
+
+:Programmme10014 a :Programme ;
+    :director "19560812-0016" ;
+    :programme_code "10014" ;
+    :programme_name "P-14" .
+
+:Programmme10021 a :Programme ;
+    :director "19570615-0011" ;
+    :programme_code "10021" ;
+    :programme_name "P-21" .
+
+:Programmme10031 a :Programme ;
+    :director "19650303-0019" ;
+    :programme_code "10031" ;
+    :programme_name "P-31" .
+
+:Programmme10032 a :Programme ;
+    :director "19570826-0012" ;
+    :programme_code "10032" ;
+    :programme_name "P-32" .
+
+:Programmme10033 a :Programme ;
+    :director "19570828-0008" ;
+    :programme_code "10033" ;
+    :programme_name "P-33" .
+
+:Programmme10034 a :Programme ;
+    :director "19610918-0027" ;
+    :programme_code "10034" ;
+    :programme_name "P-34" .
+
+:Programmme10041 a :Programme ;
+    :director "19580218-0007" ;
+    :programme_code "10041" ;
+    :programme_name "P-41" .
+
+:Programmme10042 a :Programme ;
+    :director "19620831-0024" ;
+    :programme_code "10042" ;
+    :programme_name "P-42" .
+
+:Programmme10051 a :Programme ;
+    :director "19580515-0017" ;
+    :programme_code "10051" ;
+    :programme_name "P-51" .
+
+:Programmme10052 a :Programme ;
+    :director "19611219-0014" ;
+    :programme_code "10052" ;
+    :programme_name "P-52" .
+
+:Programmme10053 a :Programme ;
+    :director "19600905-0003" ;
+    :programme_code "10053" ;
+    :programme_name "P-53" .
+
+:Programmme10054 a :Programme ;
+    :director "19630126-0001" ;
+    :programme_code "10054" ;
+    :programme_name "P-54" .
+
+:Programmme10061 a :Programme ;
+    :director "19680712-0028" ;
+    :programme_code "10061" ;
+    :programme_name "P-61" .
+
+:Programmme10071 a :Programme ;
+    :director "19610620-0006" ;
+    :programme_code "10071" ;
+    :programme_name "P-71" .
+
+:Programmme10072 a :Programme ;
+    :director "19660630-0020" ;
+    :programme_code "10072" ;
+    :programme_name "P-72" .
+
+:Programmme10073 a :Programme ;
+    :director "19600814-0002" ;
+    :programme_code "10073" ;
+    :programme_name "P-73" .
+
+:Programmme10074 a :Programme ;
+    :director "19601021-0018" ;
+    :programme_code "10074" ;
+    :programme_name "P-74" .
+
+:T-AssignedTo a owl:ObjectProperty ;
+    rdfs:domain :T-Assignment ;
+    rdfs:range :Courseinstance .
+
+:T-CourseAssignment a owl:ObjectProperty ;
+    rdfs:domain :Courseinstance ;
+    rdfs:range :T-Assignment .
+
+:TA-AssignedTo a owl:ObjectProperty ;
+    rdfs:domain :TA-Assignment ;
+    rdfs:range :Courseinstance .
+
+:TA-CourseAssignment a owl:ObjectProperty ;
+    rdfs:domain :Courseinstance ;
+    rdfs:range :TA-Assignment .
+
+:assistantHours a owl:DatatypeProperty ;
+    rdfs:domain :Courseinstance ;
+    rdfs:range xsd:float .
+
+:courseCode a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Course ;
+    rdfs:range xsd:string .
+
+:courseName a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Course ;
+    rdfs:range xsd:string .
+
+:courseType a owl:DatatypeProperty ;
+    rdfs:domain :ProgramCourse ;
+    rdfs:range xsd:string .
+
+:courseinstanceAcademicYear a owl:DatatypeProperty ;
+    rdfs:domain :Courseinstance ;
+    rdfs:range xsd:string .
+
+:credits a owl:DatatypeProperty ;
+    rdfs:domain :Course ;
+    rdfs:range xsd:float .
+
+:departmentName a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Department ;
+    rdfs:range xsd:Name .
+
+:divisionName a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Division ;
+    rdfs:range xsd:string .
+
+:employeeName a owl:DatatypeProperty ;
+    rdfs:domain :Employee ;
+    rdfs:range xsd:Name .
+
+:grade a owl:DatatypeProperty ;
+    rdfs:domain :CourseRegistration ;
+    rdfs:range xsd:string .
+
+:graduated a owl:DatatypeProperty ;
+    rdfs:domain :Student ;
+    rdfs:range xsd:boolean .
+
+:level a owl:DatatypeProperty ;
+    rdfs:domain :Course ;
+    rdfs:range xsd:string .
+
+:numberOfStudnets a owl:DatatypeProperty ;
+    rdfs:domain :Courseinstance ;
+    rdfs:range xsd:int .
+
+:programAcademicYear a owl:DatatypeProperty ;
+    rdfs:domain :Program ;
+    rdfs:range xsd:string .
+
+:programCode a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Program ;
+    rdfs:range xsd:string .
+
+:programName a owl:DatatypeProperty ;
+    rdfs:domain :Program ;
+    rdfs:range xsd:string .
+
+:status a owl:DatatypeProperty ;
+    rdfs:domain :CourseRegistration ;
+    rdfs:range xsd:boolean .
+
+:studentId a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Student ;
+    rdfs:range xsd:string .
+
+:studentName a owl:DatatypeProperty ;
+    rdfs:domain :Student ;
+    rdfs:range xsd:string .
+
+:studyPeriod a owl:DatatypeProperty ;
+    rdfs:domain :Courseinstance ;
+    rdfs:range xsd:string .
+
+:studyYear a owl:DatatypeProperty ;
+    rdfs:domain :Course ;
+    rdfs:range xsd:int .
+
+:teacherAssignedHours a owl:DatatypeProperty ;
+    rdfs:domain :Teacher ;
+    rdfs:range xsd:int .
+
+:teacherHours a owl:DatatypeProperty ;
+    rdfs:domain :Courseinstance ;
+    rdfs:range xsd:float .
+
+:teacherReportedHours a owl:DatatypeProperty ;
+    rdfs:domain :Teacher ;
+    rdfs:range xsd:int .
+
+:teacherassistentAssignedHours a owl:DatatypeProperty ;
+    rdfs:domain :Teacherassistant ;
+    rdfs:range xsd:int .
+
+:teacherassistentReportedHours a owl:DatatypeProperty ;
+    rdfs:domain :Teacherassistant ;
+    rdfs:range xsd:int .
+
+:year a owl:DatatypeProperty ;
+    rdfs:domain :Student ;
+    rdfs:range xsd:int .
+
+:employeeId a owl:DatatypeProperty ;
+    rdfs:domain :Employee ;
+    rdfs:range xsd:int .
+
+:DirectorOf a owl:ObjectProperty ;
+    rdfs:domain [ a owl:Restriction ;
+            owl:onClass :Senior_teacher ;
+            owl:onProperty :DirectorOf ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ;
+    rdfs:range [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass :Program ;
+            owl:onProperty :DirectorOf ] .
+
+:DivisionOf a owl:ObjectProperty ;
+    rdfs:domain [ a owl:Restriction ;
+            owl:onProperty :DivisionOf ;
+            owl:someValuesFrom :Division ] ;
+    rdfs:range [ a owl:Restriction ;
+            owl:onClass :Department ;
+            owl:onProperty :DivisionOf ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] .
+
+:EmployedBy a owl:ObjectProperty ;
+    rdfs:domain [ a owl:Restriction ;
+            owl:onProperty :EmployedBy ;
+            owl:someValuesFrom :Employee ] ;
+    rdfs:range [ a owl:Restriction ;
+            owl:onClass :Division ;
+            owl:onProperty :EmployedBy ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] .
+
+:ExaminedBy a owl:ObjectProperty ;
+    rdfs:domain [ a owl:Restriction ;
+            owl:onProperty :ExaminedBy ;
+            owl:someValuesFrom :Courseinstance ] ;
+    rdfs:range [ a owl:Restriction ;
+            owl:onClass :Senior_teacher ;
+            owl:onProperty :ExaminedBy ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] .
+
+:OwnedBy a owl:ObjectProperty ;
+    rdfs:domain [ a owl:Restriction ;
+            owl:onProperty :OwnedBy ;
+            owl:someValuesFrom :Program ] ;
+    rdfs:range [ a owl:Restriction ;
+            owl:onClass :Department ;
+            owl:onProperty :OwnedBy ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] .
+
+:Senior_teacher a owl:Class ;
+    rdfs:subClassOf :Teacher .
+
+:StudentEnrolledTo a owl:ObjectProperty ;
+    rdfs:domain [ a owl:Restriction ;
+            owl:onProperty :StudentEnrolledTo ;
+            owl:someValuesFrom :Student ] ;
+    rdfs:range [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass :Program ;
+            owl:onProperty :StudentEnrolledTo ] .
+
+:T-Assignment a owl:Class .
+
+:TA-Assignment a owl:Class .
+
+:Teacherassistant a owl:Class ;
+    rdfs:subClassOf :Employee .
+
+:Division a owl:Class .
+
+:ProgramCourse a owl:Class .
+
+:Teacher a owl:Class ;
+    rdfs:subClassOf :Employee .
+
+:CourseRegistration a owl:Class .
+
+:Department a owl:Class .
+
+:Employee a owl:Class ;
+    owl:hasKey ( :employeeId ) .
+
+:Student a owl:Class .
+
+:Program a owl:Class .
+
+:Courseinstance a owl:Class .
+
+:Course a owl:Class .
+
